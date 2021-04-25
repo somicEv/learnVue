@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-vue计数器</title>
+</head>
+<body>
+<div id="app">
+    <h2>当前计数：{{counter}}</h2>
+    <button v-on:click="add">+</button>
+    <button v-on:click="sub">-</button>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    const vue = new Vue({
+        el: '#app',
+        data: {
+            counter: 0
+        },
+        methods: {
+            add: function (){
+                console.log("add方法执行");
+                // 可以使用this来直接访问data中定义的值
+                this.counter++;
+            },
+            sub: function (){
+                console.log("sub方法执行");
+                this.counter--;
+            }
+        }
+    });
+</script>
+</html>
